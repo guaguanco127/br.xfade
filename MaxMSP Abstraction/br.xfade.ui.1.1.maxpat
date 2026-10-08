@@ -18,7 +18,7 @@
         "openrectmode": 0,
         "openinpresentation": 1,
         "devicewidth": 108.0,
-        "description": "br.xfade.ui.1.0 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+        "description": "br.xfade.ui.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
         "boxes": [
             {
                 "box": {
@@ -350,10 +350,11 @@
                     "id": "obj-core",
                     "maxclass": "newobj",
                     "numinlets": 7,
-                    "numoutlets": 2,
+                    "numoutlets": 3,
                     "outlettype": [
                         "signal",
-                        "signal"
+                        "signal",
+                        ""
                     ],
                     "patching_rect": [
                         15.0,
@@ -361,7 +362,7 @@
                         480.0,
                         22.0
                     ],
-                    "text": "br.xfade.1.0",
+                    "text": "br.xfade.1.1",
                     "fontsize": 12.0,
                     "fontname": "Arial"
                 }
@@ -378,7 +379,7 @@
                         421.0,
                         33.0
                     ],
-                    "text": "br.xfade.ui.1.0 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/",
+                    "text": "br.xfade.ui.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/",
                     "fontsize": 12.0,
                     "fontname": "Arial"
                 }
@@ -412,7 +413,7 @@
                         360.0,
                         47.0
                     ],
-                    "text": "[br.xfade.1.0] is the real object: open it to see the gen~ inside. This file only adds the controls, so you can also patch the core directly and drive Position with a signal (an LFO = auto-fade).",
+                    "text": "[br.xfade.1.1] is the real object: open it to see the gen~ inside. This file only adds the controls, so you can also patch the core directly and drive Position with a signal (an LFO = auto-fade).",
                     "fontsize": 12.0,
                     "fontname": "Arial"
                 }
@@ -481,10 +482,44 @@
                     "fontsize": 12.0,
                     "fontname": "Arial",
                     "angle": 270.0,
-                    "annotation": "br.xfade.ui.1.0 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
-                    "hint": "br.xfade.ui.1.0 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+                    "annotation": "br.xfade.ui.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+                    "hint": "br.xfade.ui.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
                     "proportion": 0.5,
                     "rounded": 7
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "outlet",
+                    "id": "obj-1",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "outlettype": [],
+                    "patching_rect": [
+                        140.0,
+                        200.0,
+                        30.0,
+                        30.0
+                    ],
+                    "comment": "State (Message): position 0-100, fade <ms> and law 0/1, sent the moment a control changes. Numbers only (signals are not reported). Pick them out by name: [route position fade law]"
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "comment",
+                    "id": "obj-2",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "outlettype": [],
+                    "patching_rect": [
+                        15.0,
+                        405.0,
+                        565.0,
+                        47.0
+                    ],
+                    "text": "The last outlet (State) reports the controls as position 0-100, fade <ms> and law 0/1 the moment they change. It comes from the core, so moving a control, numbers into the inlets and preset recalls all show up. Pick them out by name with [route position fade law].",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
                 }
             }
         ],
@@ -629,6 +664,18 @@
                     ],
                     "destination": [
                         "obj-out2",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-core",
+                        2
+                    ],
+                    "destination": [
+                        "obj-1",
                         0
                     ]
                 }

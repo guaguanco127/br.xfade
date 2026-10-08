@@ -10,7 +10,8 @@
         },
         "classnamespace": "box",
         "rect": [ 85.0, 104.0, 1160.0, 620.0 ],
-        "description": "_br.xfade.example.1.0 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+        "description": "_br.xfade.example.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+        "showontab": 1,
         "boxes": [
             {
                 "box": {
@@ -22,7 +23,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 630.0, 15.0, 430.0, 33.0 ],
-                    "text": "_br.xfade.example.1.0 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/"
+                    "text": "_br.xfade.example.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/"
                 }
             },
             {
@@ -60,7 +61,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 15.0, 100.0, 413.0, 74.0 ],
-                    "text": "Four files, same DSP inside:\nbr.xfade.1.0 = stereo core, no UI (in: A L, A R, B L, B R, Position, Fade, Law)\nbr.xfade.mono.1.0 = mono core (in: A, B, Position, Fade, Law)\nbr.xfade.ui.1.0 / br.xfade.mono.ui.1.0 = the same with controls, for bpatchers\nUI and core have the same inlets and outlets, so either drops in."
+                    "text": "Four files, same DSP inside:\nbr.xfade.1.1 = stereo core, no UI (in: A L, A R, B L, B R, Position, Fade, Law)\nbr.xfade.mono.1.1 = mono core (in: A, B, Position, Fade, Law)\nbr.xfade.ui.1.1 / br.xfade.mono.ui.1.1 = the same with controls, for bpatchers\nUI and core have the same inlets and outlets, so either drops in."
                 }
             },
             {
@@ -85,7 +86,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 15.0, 230.0, 560.0, 33.0 ],
+                    "patching_rect": [ 15.0, 230.0, 561.0, 33.0 ],
                     "text": "B: mono core used as a switch. Click 0 / 100 to hop between the sources: no click. Set Fade to 2000 for a slow crossfade. Position also takes a signal: patch an LFO in for an auto-fade."
                 }
             },
@@ -318,7 +319,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 638.0, 79.0, 220.0, 20.0 ],
-                    "text": "A: br.xfade.ui.1.0"
+                    "text": "A: br.xfade.ui.1.1"
                 }
             },
             {
@@ -332,11 +333,11 @@
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
                     "maxclass": "bpatcher",
-                    "name": "br.xfade.ui.1.0.maxpat",
+                    "name": "br.xfade.ui.1.1.maxpat",
                     "numinlets": 7,
-                    "numoutlets": 2,
+                    "numoutlets": 3,
                     "offset": [ 0.0, 0.0 ],
-                    "outlettype": [ "signal", "signal" ],
+                    "outlettype": [ "signal", "signal", "" ],
                     "patching_rect": [ 630.0, 267.0, 108.0, 88.0 ],
                     "viewvisibility": 1
                 }
@@ -349,8 +350,8 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 810.0, 145.0, 300.0, 20.0 ],
-                    "text": "B: br.xfade.mono.1.0 as a click-free switch"
+                    "patching_rect": [ 955.0, 145.0, 300.0, 20.0 ],
+                    "text": "B: br.xfade.mono.1.1 as a click-free switch"
                 }
             },
             {
@@ -360,10 +361,10 @@
                     "id": "obj-b",
                     "maxclass": "newobj",
                     "numinlets": 5,
-                    "numoutlets": 1,
-                    "outlettype": [ "signal" ],
-                    "patching_rect": [ 810.0, 300.0, 300.0, 22.0 ],
-                    "text": "br.xfade.mono.1.0"
+                    "numoutlets": 2,
+                    "outlettype": [ "signal", "" ],
+                    "patching_rect": [ 955.0, 300.0, 300.0, 22.0 ],
+                    "text": "br.xfade.mono.1.1"
                 }
             },
             {
@@ -374,7 +375,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 1115.0, 300.0, 40.0, 20.0 ],
+                    "patching_rect": [ 1260.0, 300.0, 40.0, 20.0 ],
                     "text": "core"
                 }
             },
@@ -387,7 +388,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 880.0, 175.0, 30.0, 22.0 ],
+                    "patching_rect": [ 1025.0, 175.0, 30.0, 22.0 ],
                     "text": "0"
                 }
             },
@@ -400,7 +401,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 915.0, 175.0, 35.0, 22.0 ],
+                    "patching_rect": [ 1060.0, 175.0, 35.0, 22.0 ],
                     "text": "100"
                 }
             },
@@ -412,7 +413,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 955.0, 175.0, 120.0, 20.0 ],
+                    "patching_rect": [ 1100.0, 175.0, 120.0, 20.0 ],
                     "text": "Position: A / B"
                 }
             },
@@ -425,7 +426,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 960.0, 205.0, 30.0, 22.0 ],
+                    "patching_rect": [ 1105.0, 205.0, 30.0, 22.0 ],
                     "text": "20"
                 }
             },
@@ -438,7 +439,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 995.0, 205.0, 45.0, 22.0 ],
+                    "patching_rect": [ 1140.0, 205.0, 45.0, 22.0 ],
                     "text": "2000"
                 }
             },
@@ -450,7 +451,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 1045.0, 205.0, 100.0, 20.0 ],
+                    "patching_rect": [ 1190.0, 205.0, 100.0, 20.0 ],
                     "text": "Fade ms"
                 }
             },
@@ -489,7 +490,7 @@
                     "numoutlets": 5,
                     "outlettype": [ "signal", "signal", "", "float", "list" ],
                     "parameter_enable": 1,
-                    "patching_rect": [ 810.0, 400.0, 48.0, 136.0 ],
+                    "patching_rect": [ 955.0, 406.0, 48.0, 136.0 ],
                     "saved_attribute_attributes": {
                         "valueof": {
                             "parameter_initial": [ -70.0 ],
@@ -540,9 +541,202 @@
                     "patching_rect": [ 630.0, 560.0, 72.0, 22.0 ],
                     "text": "dac~ 1 2"
                 }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-1",
+                    "linecount": 3,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 15.0, 318.0, 560.0, 47.0 ],
+                    "text": "State outlet: every UI and core has a last outlet that sends position 0-100, fade <ms> and law 0/1 the moment a control changes (numbers only, not signals). Open [p State outlet] (also a tab at the top) to see it read by name with [route position fade law]."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-2",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patcher": {
+                        "fileversion": 1,
+                        "appversion": {
+                            "major": 9,
+                            "minor": 1,
+                            "revision": 4,
+                            "architecture": "x64",
+                            "modernui": 1
+                        },
+                        "classnamespace": "box",
+                        "rect": [ 0.0, 26.0, 1160.0, 594.0 ],
+                        "showontab": 1,
+                        "boxes": [
+                            {
+                                "box": {
+                                    "comment": "State from A (UI)",
+                                    "id": "obj-1",
+                                    "index": 1,
+                                    "maxclass": "inlet",
+                                    "numinlets": 0,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 30.0, 95.0, 30.0, 30.0 ]
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-2",
+                                    "linecount": 3,
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 30.0, 15.0, 600.0, 47.0 ],
+                                    "text": "Each br.xfade UI/core sends its state out of its LAST outlet as named messages: position 0-100, fade <ms> and law 0/1, the moment a control changes. Read them by NAME with [route position fade law], never by position: names stay put when a tool gains controls."
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-3",
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 70.0, 100.0, 58.0, 20.0 ],
+                                    "text": "A (UI)"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-4",
+                                    "maxclass": "newobj",
+                                    "numinlets": 4,
+                                    "numoutlets": 4,
+                                    "outlettype": [ "", "", "", "" ],
+                                    "patching_rect": [ 30.0, 135.0, 177.0, 22.0 ],
+                                    "text": "route position fade law"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "format": 6,
+                                    "id": "obj-5",
+                                    "maxclass": "flonum",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "bang" ],
+                                    "parameter_enable": 0,
+                                    "patching_rect": [ 30.0, 170.0, 50.0, 22.0 ]
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-6",
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 30.0, 195.0, 72.0, 20.0 ],
+                                    "text": "position"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "format": 6,
+                                    "id": "obj-7",
+                                    "maxclass": "flonum",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "bang" ],
+                                    "parameter_enable": 0,
+                                    "patching_rect": [ 119.0, 170.0, 50.0, 22.0 ]
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-8",
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 119.0, 195.0, 44.0, 20.0 ],
+                                    "text": "fade"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-9",
+                                    "maxclass": "number",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "bang" ],
+                                    "parameter_enable": 0,
+                                    "patching_rect": [ 189.0, 170.0, 50.0, 22.0 ]
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-10",
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 189.0, 195.0, 40.0, 20.0 ],
+                                    "text": "law"
+                                }
+                            }
+                        ],
+                        "lines": [
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-4", 0 ],
+                                    "source": [ "obj-1", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-5", 0 ],
+                                    "source": [ "obj-4", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-7", 0 ],
+                                    "source": [ "obj-4", 1 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-9", 0 ],
+                                    "source": [ "obj-4", 2 ]
+                                }
+                            }
+                        ]
+                    },
+                    "patching_rect": [ 758.0, 364.0, 128.0, 22.0 ],
+                    "text": "p \"State outlet\""
+                }
             }
         ],
         "lines": [
+            {
+                "patchline": {
+                    "destination": [ "obj-2", 0 ],
+                    "source": [ "obj-a", 2 ]
+                }
+            },
             {
                 "patchline": {
                     "destination": [ "obj-gaina", 1 ],

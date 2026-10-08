@@ -1,13 +1,13 @@
 # Max/MSP Patches, Abstractions, Externals, RNBO and VSTs
 
-## br.xfade.1.0
+## br.xfade.1.1
    
 By Brian Riordan  
 [guaguanco127@gmail.com](mailto:guaguanco127@gmail.com)  
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
   
-Repository for br.xfade.1.0, with all related files, can be found here: [https://github.com/guaguanco127/br.xfade](https://github.com/guaguanco127/br.xfade)  
+Repository for br.xfade.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.xfade](https://github.com/guaguanco127/br.xfade)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)
 
 These files were created with Max 9, or RNBO.
@@ -36,21 +36,26 @@ You can use it as an abstraction within Max/MSP. With RNBO you can also build yo
 
 **Law:** Equal Power (default) keeps the loudness steady when A and B are different sounds: two loops, dry vs reverb. Linear is for two nearly identical signals, such as dry vs lightly filtered: there Equal Power gets 3 dB louder in the middle. Changing Law glides over 10 ms.
 
+## <a name="New"></a>What's new in 1.1
+
+- New [State outlet](#State): every abstraction and the RNBO patch now send `position 50.`, `fade 20.` and `law 0` out of their last outlet the moment a setting changes, so a display, Mira or another patch can follow along.
+- The inlets and the audio outlets are unchanged. Only the file names move from 1.0 to 1.1.
+
 ## <a name="Files"></a>Which file?
 
 | File | What it is |
 |---|---|
-| br.xfade.1.0 | Stereo, no UI. The plain object to patch with |
-| br.xfade.ui.1.0 | Stereo, with a Law menu and Position and Fade dials, ready for a [bpatcher] |
-| br.xfade.mono.1.0 | Mono, no UI |
-| br.xfade.mono.ui.1.0 | Mono, with the same controls, ready for a [bpatcher] |
-| _br.xfade.example.1.0 | Example patch: open this first |
+| br.xfade.1.1 | Stereo, no UI. The plain object to patch with |
+| br.xfade.ui.1.1 | Stereo, with a Law menu and Position and Fade dials, ready for a [bpatcher] |
+| br.xfade.mono.1.1 | Mono, no UI |
+| br.xfade.mono.ui.1.1 | Mono, with the same controls, ready for a [bpatcher] |
+| _br.xfade.example.1.1 | Example patch: open this first |
 
 Each UI version contains its plain version and has the same inlets and outlets, so either swaps in without rewiring. Open a UI version in patching mode for comments on how it is built.
 
 ## <a name="Use"></a>How To Use
 
-**br.xfade.1.0 (stereo)**
+**br.xfade.1.1 (stereo)**
 
 | Inlet | Control | Type | Range | Default |
 |---|---|---|---|---|
@@ -62,9 +67,10 @@ Each UI version contains its plain version and has the same inlets and outlets, 
 | 6 | Fade | Signal or Float (UI: Float only) | ms 1 to 30000: time for a full A-to-B move | 20 |
 | 7 | Law | Signal or Int (UI: Int only) | 0 Equal Power, 1 Linear | 0 |
 
-Outlets 1 / 2: Left Out / Right Out (Signal)
+Outlets 1 / 2: Left Out / Right Out (Signal)  
+Outlet 3: State (Message), see [State outlet](#State)
 
-**br.xfade.mono.1.0 (mono)**
+**br.xfade.mono.1.1 (mono)**
 
 | Inlet | Control | Type | Range | Default |
 |---|---|---|---|---|
@@ -74,6 +80,19 @@ Outlets 1 / 2: Left Out / Right Out (Signal)
 | 4 | Fade | Signal or Float (UI: Float only) | ms 1 to 30000: time for a full A-to-B move | 20 |
 | 5 | Law | Signal or Int (UI: Int only) | 0 Equal Power, 1 Linear | 0 |
 
-Outlet 1: Out (Signal)
+Outlet 1: Out (Signal)  
+Outlet 2: State (Message), see [State outlet](#State)
 
 Both versions use the same crossfade code. In the UI versions a number into an inlet moves its control, so the screen always shows what you hear. Once a signal is patched into Position, numbers sent to that inlet are ignored (the signal wins), as with any MSP signal inlet. Hover any inlet or outlet in Max for its description.
+
+## <a name="State"></a>State outlet
+
+The last outlet of every abstraction (State) sends the current settings as named messages the moment they change: `position 50.`, `fade 20.` and `law 0`. Use it to keep a display, Mira or another patch in sync. Pick them out by name with [route position fade law], not by position, so your patch keeps working if a later version adds controls. Repeats are filtered out.
+
+| Message | Type | Range |
+|---|---|---|
+| position | Float | 0 to 100, 0 = all A, 100 = all B |
+| fade | Float | ms, 1 to 30000 |
+| law | Int | menu index: 0 = Equal Power, 1 = Linear |
+
+Only numbers are reported: if a signal drives Position, Fade or Law of the plain version, nothing comes out of State. Law is sent as the menu index, the same number its inlet takes, so a State message can go straight back into an inlet. The example patch has a State outlet tab that shows this, and the RNBO patch shows the same [route position fade law].

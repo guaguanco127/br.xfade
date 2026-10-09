@@ -18,7 +18,7 @@
         "openrectmode": 0,
         "openinpresentation": 1,
         "devicewidth": 108.0,
-        "description": "br.xfade.mono.ui.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+        "description": "br.xfade.ui.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
         "boxes": [
             {
                 "box": {
@@ -35,7 +35,7 @@
                         30.0,
                         30.0
                     ],
-                    "comment": "A In (Signal)",
+                    "comment": "A Left In (Signal)",
                     "fontsize": 12.0,
                     "fontname": "Arial",
                     "index": 0
@@ -56,7 +56,7 @@
                         30.0,
                         30.0
                     ],
-                    "comment": "B In (Signal)",
+                    "comment": "A Right In (Signal)",
                     "fontsize": 12.0,
                     "fontname": "Arial",
                     "index": 1
@@ -77,7 +77,7 @@
                         30.0,
                         30.0
                     ],
-                    "comment": "Position (Float) 0. to 100. 0 = all A, 100 = all B. Sets the dial. Default 0",
+                    "comment": "B Left In (Signal)",
                     "fontsize": 12.0,
                     "fontname": "Arial",
                     "index": 2
@@ -98,7 +98,7 @@
                         30.0,
                         30.0
                     ],
-                    "comment": "Fade (Float) ms 1. to 30000. Time for a full A-to-B move. Sets the dial. Default 20",
+                    "comment": "B Right In (Signal)",
                     "fontsize": 12.0,
                     "fontname": "Arial",
                     "index": 3
@@ -119,10 +119,52 @@
                         30.0,
                         30.0
                     ],
-                    "comment": "Law (Int) 0 Equal Power, 1 Linear. Sets the menu. Default 0",
+                    "comment": "Position (Float) 0. to 100. 0 = all A, 100 = all B. Sets the dial. Default 0",
                     "fontsize": 12.0,
                     "fontname": "Arial",
                     "index": 4
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-in6",
+                    "maxclass": "inlet",
+                    "numinlets": 0,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        445.0,
+                        15.0,
+                        30.0,
+                        30.0
+                    ],
+                    "comment": "Fade (Float) ms 1. to 30000. Time for a full A-to-B move. Sets the dial. Default 20",
+                    "fontsize": 12.0,
+                    "fontname": "Arial",
+                    "index": 5
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-in7",
+                    "maxclass": "inlet",
+                    "numinlets": 0,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        575.0,
+                        15.0,
+                        30.0,
+                        30.0
+                    ],
+                    "comment": "Law (Int) 0 Equal Power, 1 Linear. Sets the menu. Default 0",
+                    "fontsize": 12.0,
+                    "fontname": "Arial",
+                    "index": 6
                 }
             },
             {
@@ -133,14 +175,32 @@
                     "numoutlets": 0,
                     "patching_rect": [
                         15.0,
-                        200.0,
+                        280.0,
                         30.0,
                         30.0
                     ],
-                    "comment": "Out (Signal)",
+                    "comment": "Left Out (Signal)",
                     "fontsize": 12.0,
                     "fontname": "Arial",
                     "index": 0
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-out2",
+                    "maxclass": "outlet",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [
+                        90.0,
+                        280.0,
+                        30.0,
+                        30.0
+                    ],
+                    "comment": "Right Out (Signal)",
+                    "fontsize": 12.0,
+                    "fontname": "Arial",
+                    "index": 1
                 }
             },
             {
@@ -155,8 +215,8 @@
                     ],
                     "parameter_enable": 1,
                     "patching_rect": [
-                        165.0,
-                        85.0,
+                        315.0,
+                        60.0,
                         44.0,
                         52.0
                     ],
@@ -201,8 +261,8 @@
                     ],
                     "parameter_enable": 1,
                     "patching_rect": [
-                        240.0,
-                        85.0,
+                        445.0,
+                        60.0,
                         44.0,
                         52.0
                     ],
@@ -249,7 +309,7 @@
                     ],
                     "parameter_enable": 1,
                     "patching_rect": [
-                        315.0,
+                        575.0,
                         60.0,
                         94.0,
                         17.0
@@ -289,19 +349,20 @@
                 "box": {
                     "id": "obj-core",
                     "maxclass": "newobj",
-                    "numinlets": 5,
+                    "numinlets": 7,
                     "numoutlets": 2,
                     "outlettype": [
+                        "signal",
                         "signal",
                         ""
                     ],
                     "patching_rect": [
                         15.0,
+                        170.0,
                         150.0,
-                        330.0,
                         22.0
                     ],
-                    "text": "br.xfade.mono.1.1",
+                    "text": "br.xfade.1.2",
                     "fontsize": 12.0,
                     "fontname": "Arial"
                 }
@@ -313,12 +374,12 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [
-                        450.0,
+                        1105.0,
                         15.0,
                         421.0,
                         33.0
                     ],
-                    "text": "br.xfade.mono.ui.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/",
+                    "text": "br.xfade.ui.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/",
                     "fontsize": 12.0,
                     "fontname": "Arial"
                 }
@@ -330,7 +391,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [
-                        450.0,
+                        725.0,
                         60.0,
                         360.0,
                         60.0
@@ -347,12 +408,12 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [
-                        450.0,
+                        725.0,
                         160.0,
                         360.0,
                         47.0
                     ],
-                    "text": "[br.xfade.mono.1.1] is the real object: open it to see the gen~ inside. This file only adds the controls, so you can also patch the core directly and drive Position with a signal (an LFO = auto-fade).",
+                    "text": "[br.xfade.1.2] is the real object: open it to see the gen~ inside. This file only adds the controls, so you can also patch the core directly and drive Position with a signal (an LFO = auto-fade).",
                     "fontsize": 12.0,
                     "fontname": "Arial"
                 }
@@ -365,7 +426,7 @@
                     "numoutlets": 0,
                     "patching_rect": [
                         15.0,
-                        250.0,
+                        330,
                         500.0,
                         60.0
                     ],
@@ -382,7 +443,7 @@
                     "numoutlets": 0,
                     "patching_rect": [
                         15.0,
-                        335.0,
+                        400,
                         500.0,
                         60.0
                     ],
@@ -398,7 +459,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [
-                        450.0,
+                        1105.0,
                         250.0,
                         138.0,
                         74.0
@@ -421,8 +482,8 @@
                     "fontsize": 12.0,
                     "fontname": "Arial",
                     "angle": 270.0,
-                    "annotation": "br.xfade.mono.ui.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
-                    "hint": "br.xfade.mono.ui.1.1 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+                    "annotation": "br.xfade.ui.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
+                    "hint": "br.xfade.ui.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/",
                     "proportion": 0.5,
                     "rounded": 7
                 }
@@ -435,12 +496,12 @@
                     "numoutlets": 0,
                     "outlettype": [],
                     "patching_rect": [
-                        65.0,
-                        200.0,
+                        165.0,
+                        280.0,
                         30.0,
                         30.0
                     ],
-                    "comment": "State (Message): position 0-100, fade <ms> and law 0/1, sent the moment a control changes. Numbers only (signals are not reported). Pick them out by name: [route position fade law]"
+                    "comment": "State (Message): position 0-100, fade <ms> and law 0/1, sent the moment a control changes. Pick them out by name: [route position fade law]"
                 }
             },
             {
@@ -452,11 +513,200 @@
                     "outlettype": [],
                     "patching_rect": [
                         15.0,
-                        405.0,
+                        470,
                         565.0,
                         47.0
                     ],
-                    "text": "The last outlet (State) reports the controls as position 0-100, fade <ms> and law 0/1 the moment they change. It comes from the core, so moving a control, numbers into the inlets and preset recalls all show up. Pick them out by name with [route position fade law].",
+                    "text": "The last outlet (State) reports the controls as position 0-100, fade <ms> and law 0/1 the moment they change. Each control is tapped on its way into the core, so moving it, numbers into the inlets and preset recalls all show up. Only the UI has one: whatever drives the core directly already knows the values. Pick them out by name with [route position fade law].",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-3",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "",
+                        ""
+                    ],
+                    "patching_rect": [
+                        315.0,
+                        125.0,
+                        51.0,
+                        22.0
+                    ],
+                    "text": "t f f",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-4",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "patching_rect": [
+                        315.0,
+                        200.0,
+                        79.0,
+                        22.0
+                    ],
+                    "text": "change 0.",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-5",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        315.0,
+                        230.0,
+                        110.0,
+                        22.0
+                    ],
+                    "text": "prepend position",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-6",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "",
+                        ""
+                    ],
+                    "patching_rect": [
+                        445.0,
+                        125.0,
+                        51.0,
+                        22.0
+                    ],
+                    "text": "t f f",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-7",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "patching_rect": [
+                        445.0,
+                        200.0,
+                        79.0,
+                        22.0
+                    ],
+                    "text": "change 0.",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-8",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        445.0,
+                        230.0,
+                        110.0,
+                        22.0
+                    ],
+                    "text": "prepend fade",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-9",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [
+                        "",
+                        ""
+                    ],
+                    "patching_rect": [
+                        575.0,
+                        125.0,
+                        51.0,
+                        22.0
+                    ],
+                    "text": "t i i",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-10",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [
+                        "",
+                        "",
+                        ""
+                    ],
+                    "patching_rect": [
+                        575.0,
+                        200.0,
+                        72.0,
+                        22.0
+                    ],
+                    "text": "change 0",
+                    "fontname": "Arial",
+                    "fontsize": 12.0
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "id": "obj-11",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [
+                        ""
+                    ],
+                    "patching_rect": [
+                        575.0,
+                        230.0,
+                        110.0,
+                        22.0
+                    ],
+                    "text": "prepend law",
                     "fontname": "Arial",
                     "fontsize": 12.0
                 }
@@ -494,18 +744,6 @@
                         0
                     ],
                     "destination": [
-                        "obj-pos",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-pos",
-                        0
-                    ],
-                    "destination": [
                         "obj-core",
                         2
                     ]
@@ -515,18 +753,6 @@
                 "patchline": {
                     "source": [
                         "obj-in4",
-                        0
-                    ],
-                    "destination": [
-                        "obj-fade",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-fade",
                         0
                     ],
                     "destination": [
@@ -542,7 +768,7 @@
                         0
                     ],
                     "destination": [
-                        "obj-law",
+                        "obj-pos",
                         0
                     ]
                 }
@@ -550,12 +776,24 @@
             {
                 "patchline": {
                     "source": [
-                        "obj-law",
+                        "obj-in6",
                         0
                     ],
                     "destination": [
-                        "obj-core",
-                        4
+                        "obj-fade",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-in7",
+                        0
+                    ],
+                    "destination": [
+                        "obj-law",
+                        0
                     ]
                 }
             },
@@ -576,6 +814,186 @@
                     "source": [
                         "obj-core",
                         1
+                    ],
+                    "destination": [
+                        "obj-out2",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-pos",
+                        0
+                    ],
+                    "destination": [
+                        "obj-3",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-3",
+                        1
+                    ],
+                    "destination": [
+                        "obj-core",
+                        4
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-3",
+                        0
+                    ],
+                    "destination": [
+                        "obj-4",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-4",
+                        0
+                    ],
+                    "destination": [
+                        "obj-5",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-5",
+                        0
+                    ],
+                    "destination": [
+                        "obj-1",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fade",
+                        0
+                    ],
+                    "destination": [
+                        "obj-6",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-6",
+                        1
+                    ],
+                    "destination": [
+                        "obj-core",
+                        5
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-6",
+                        0
+                    ],
+                    "destination": [
+                        "obj-7",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-7",
+                        0
+                    ],
+                    "destination": [
+                        "obj-8",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-8",
+                        0
+                    ],
+                    "destination": [
+                        "obj-1",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-law",
+                        0
+                    ],
+                    "destination": [
+                        "obj-9",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-9",
+                        1
+                    ],
+                    "destination": [
+                        "obj-core",
+                        6
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-9",
+                        0
+                    ],
+                    "destination": [
+                        "obj-10",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-10",
+                        0
+                    ],
+                    "destination": [
+                        "obj-11",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-11",
+                        0
                     ],
                     "destination": [
                         "obj-1",

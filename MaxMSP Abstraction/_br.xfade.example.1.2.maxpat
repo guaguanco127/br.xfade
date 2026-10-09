@@ -1114,6 +1114,936 @@
                     ],
                     "text": "p \"State outlet\""
                 }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-coretab",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 0,
+                    "patching_rect": [
+                        901.0,
+                        364.0,
+                        121.0,
+                        22.0
+                    ],
+                    "text": "p \"stereo core\"",
+                    "patcher": {
+                        "fileversion": 1,
+                        "appversion": {
+                            "major": 9,
+                            "minor": 1,
+                            "revision": 4,
+                            "architecture": "x64",
+                            "modernui": 1
+                        },
+                        "classnamespace": "box",
+                        "rect": [
+                            0.0,
+                            26.0,
+                            1100.0,
+                            640.0
+                        ],
+                        "showontab": 1,
+                        "boxes": [
+                            {
+                                "box": {
+                                    "id": "c-head",
+                                    "maxclass": "comment",
+                                    "text": "Stereo core: br.xfade.1.2",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [
+                                        15,
+                                        15,
+                                        420,
+                                        27.0
+                                    ],
+                                    "fontsize": 18.0,
+                                    "fontname": "Arial"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-t0",
+                                    "maxclass": "comment",
+                                    "text": "The stereo core is the same DSP as the UI with no controls. In: A L, A R, B L, B R, Position, Fade, Law. Out: Left, Right. The control inlets take numbers or signals.",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [
+                                        15,
+                                        55.0,
+                                        380.0,
+                                        46.5
+                                    ],
+                                    "fontsize": 12.0,
+                                    "linecount": 3,
+                                    "fontname": "Arial"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-t1",
+                                    "maxclass": "comment",
+                                    "text": "Here an LFO drives Position, so the mix drifts from the drum loop (A) to Anton (B) and back on its own. Change the rate; click 0 / 1 to hear the two laws. Fade stays at its default 20 ms.",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [
+                                        15,
+                                        115.5,
+                                        380.0,
+                                        60.0
+                                    ],
+                                    "fontsize": 12.0,
+                                    "linecount": 4,
+                                    "fontname": "Arial"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-tmuted",
+                                    "maxclass": "comment",
+                                    "text": "Outputs start muted at -70 dB: turn on audio, then raise the slider slowly.",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [
+                                        15,
+                                        189.5,
+                                        380.0,
+                                        33.0
+                                    ],
+                                    "fontsize": 12.0,
+                                    "linecount": 2,
+                                    "fontname": "Arial"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-source",
+                                    "maxclass": "newobj",
+                                    "numinlets": 0,
+                                    "numoutlets": 2,
+                                    "outlettype": [
+                                        "signal",
+                                        "signal"
+                                    ],
+                                    "patcher": {
+                                        "fileversion": 1,
+                                        "appversion": {
+                                            "major": 9,
+                                            "minor": 1,
+                                            "revision": 4,
+                                            "architecture": "x64",
+                                            "modernui": 1
+                                        },
+                                        "classnamespace": "box",
+                                        "rect": [
+                                            100.0,
+                                            100.0,
+                                            420.0,
+                                            260.0
+                                        ],
+                                        "boxes": [
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "src-note",
+                                                    "linecount": 2,
+                                                    "maxclass": "comment",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 0,
+                                                    "patching_rect": [
+                                                        15.0,
+                                                        15.0,
+                                                        330.0,
+                                                        33.0
+                                                    ],
+                                                    "text": "A = drum loop, B = Anton (both ship with Max), each on both sides."
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "src-lb",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [
+                                                        "bang"
+                                                    ],
+                                                    "patching_rect": [
+                                                        15.0,
+                                                        60.0,
+                                                        60.0,
+                                                        22.0
+                                                    ],
+                                                    "text": "loadbang"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "src-t",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 2,
+                                                    "outlettype": [
+                                                        "bang",
+                                                        "bang"
+                                                    ],
+                                                    "patching_rect": [
+                                                        15.0,
+                                                        90.0,
+                                                        40.0,
+                                                        22.0
+                                                    ],
+                                                    "text": "t b b"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "src-m1",
+                                                    "maxclass": "message",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [
+                                                        ""
+                                                    ],
+                                                    "patching_rect": [
+                                                        15.0,
+                                                        120.0,
+                                                        180.0,
+                                                        22.0
+                                                    ],
+                                                    "text": "open drumLoop.aif, loop 1, 1"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "src-m2",
+                                                    "maxclass": "message",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [
+                                                        ""
+                                                    ],
+                                                    "patching_rect": [
+                                                        210.0,
+                                                        120.0,
+                                                        165.0,
+                                                        22.0
+                                                    ],
+                                                    "text": "open anton.aif, loop 1, 1"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "src-p1",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 2,
+                                                    "outlettype": [
+                                                        "signal",
+                                                        "bang"
+                                                    ],
+                                                    "patching_rect": [
+                                                        15.0,
+                                                        150.0,
+                                                        70.0,
+                                                        22.0
+                                                    ],
+                                                    "text": "sfplay~ 1"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "src-p2",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 2,
+                                                    "outlettype": [
+                                                        "signal",
+                                                        "bang"
+                                                    ],
+                                                    "patching_rect": [
+                                                        210.0,
+                                                        150.0,
+                                                        70.0,
+                                                        22.0
+                                                    ],
+                                                    "text": "sfplay~ 1"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "comment": "Source A (Signal) drum loop",
+                                                    "id": "src-o1",
+                                                    "index": 1,
+                                                    "maxclass": "outlet",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 0,
+                                                    "patching_rect": [
+                                                        15.0,
+                                                        190.0,
+                                                        30.0,
+                                                        30.0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "comment": "Source B (Signal) Anton",
+                                                    "id": "src-o2",
+                                                    "index": 2,
+                                                    "maxclass": "outlet",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 0,
+                                                    "patching_rect": [
+                                                        210.0,
+                                                        190.0,
+                                                        30.0,
+                                                        30.0
+                                                    ]
+                                                }
+                                            }
+                                        ],
+                                        "lines": [
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "src-t",
+                                                        0
+                                                    ],
+                                                    "source": [
+                                                        "src-lb",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "src-p1",
+                                                        0
+                                                    ],
+                                                    "source": [
+                                                        "src-m1",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "src-p2",
+                                                        0
+                                                    ],
+                                                    "source": [
+                                                        "src-m2",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "src-o1",
+                                                        0
+                                                    ],
+                                                    "source": [
+                                                        "src-p1",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "src-o2",
+                                                        0
+                                                    ],
+                                                    "source": [
+                                                        "src-p2",
+                                                        0
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "src-m1",
+                                                        0
+                                                    ],
+                                                    "source": [
+                                                        "src-t",
+                                                        1
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [
+                                                        "src-m2",
+                                                        0
+                                                    ],
+                                                    "source": [
+                                                        "src-t",
+                                                        0
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "patching_rect": [
+                                        460.0,
+                                        15.0,
+                                        120.0,
+                                        22.0
+                                    ],
+                                    "text": "p sources"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-core",
+                                    "maxclass": "newobj",
+                                    "text": "br.xfade.1.2",
+                                    "numinlets": 7,
+                                    "numoutlets": 2,
+                                    "outlettype": [
+                                        "signal",
+                                        "signal"
+                                    ],
+                                    "patching_rect": [
+                                        460,
+                                        230,
+                                        260,
+                                        22.0
+                                    ],
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-rlm",
+                                    "maxclass": "newobj",
+                                    "text": "loadmess 0.1",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        ""
+                                    ],
+                                    "patching_rect": [
+                                        620,
+                                        60,
+                                        100.0,
+                                        22.0
+                                    ],
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-rate",
+                                    "maxclass": "flonum",
+                                    "format": 6,
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [
+                                        "",
+                                        "bang"
+                                    ],
+                                    "parameter_enable": 0,
+                                    "patching_rect": [
+                                        620,
+                                        90,
+                                        50.0,
+                                        22.0
+                                    ],
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-raten",
+                                    "maxclass": "comment",
+                                    "text": "rate Hz",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [
+                                        675,
+                                        90,
+                                        60,
+                                        19.5
+                                    ],
+                                    "fontsize": 12.0,
+                                    "fontname": "Arial"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-osc",
+                                    "maxclass": "newobj",
+                                    "text": "cycle~ 0.1",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        "signal"
+                                    ],
+                                    "patching_rect": [
+                                        620,
+                                        120,
+                                        86.0,
+                                        22.0
+                                    ],
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-dep",
+                                    "maxclass": "newobj",
+                                    "text": "*~ 50.",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        "signal"
+                                    ],
+                                    "patching_rect": [
+                                        620,
+                                        150,
+                                        58.0,
+                                        22.0
+                                    ],
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-cen",
+                                    "maxclass": "newobj",
+                                    "text": "+~ 50.",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        "signal"
+                                    ],
+                                    "patching_rect": [
+                                        620,
+                                        180,
+                                        58.0,
+                                        22.0
+                                    ],
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-posn",
+                                    "maxclass": "comment",
+                                    "text": "Position: a slow sine, all A (0) to all B (100) and back",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [
+                                        690,
+                                        165,
+                                        200,
+                                        33.0
+                                    ],
+                                    "fontsize": 12.0,
+                                    "linecount": 2,
+                                    "fontname": "Arial"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-law0",
+                                    "maxclass": "message",
+                                    "text": "0",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        ""
+                                    ],
+                                    "patching_rect": [
+                                        900,
+                                        120,
+                                        30.0,
+                                        22.0
+                                    ],
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-law1",
+                                    "maxclass": "message",
+                                    "text": "1",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        ""
+                                    ],
+                                    "patching_rect": [
+                                        935,
+                                        120,
+                                        30.0,
+                                        22.0
+                                    ],
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-lawn",
+                                    "maxclass": "comment",
+                                    "text": "Law: 0 Equal Power, 1 Linear",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [
+                                        900,
+                                        145,
+                                        190,
+                                        19.5
+                                    ],
+                                    "fontsize": 12.0,
+                                    "fontname": "Arial"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-gain",
+                                    "lastchannelcount": 0,
+                                    "maxclass": "live.gain~",
+                                    "numinlets": 2,
+                                    "numoutlets": 5,
+                                    "outlettype": [
+                                        "signal",
+                                        "signal",
+                                        "",
+                                        "float",
+                                        "list"
+                                    ],
+                                    "parameter_enable": 1,
+                                    "patching_rect": [
+                                        460,
+                                        380,
+                                        48.0,
+                                        136.0
+                                    ],
+                                    "varname": "Out core",
+                                    "saved_attribute_attributes": {
+                                        "valueof": {
+                                            "parameter_initial": [
+                                                -70.0
+                                            ],
+                                            "parameter_initial_enable": 1,
+                                            "parameter_longname": "Out core",
+                                            "parameter_mmax": 6.0,
+                                            "parameter_mmin": -70.0,
+                                            "parameter_modmode": 3,
+                                            "parameter_shortname": "Out",
+                                            "parameter_type": 0,
+                                            "parameter_unitstyle": 4
+                                        }
+                                    },
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-gainn",
+                                    "maxclass": "comment",
+                                    "text": "starts muted: raise slowly",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [
+                                        515,
+                                        380,
+                                        170,
+                                        33.0
+                                    ],
+                                    "fontsize": 12.0,
+                                    "linecount": 2,
+                                    "fontname": "Arial"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-dactog",
+                                    "maxclass": "toggle",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [
+                                        "int"
+                                    ],
+                                    "parameter_enable": 0,
+                                    "patching_rect": [
+                                        515,
+                                        410,
+                                        24.0,
+                                        24.0
+                                    ],
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-dacn",
+                                    "maxclass": "comment",
+                                    "text": "audio on/off",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [
+                                        545,
+                                        410,
+                                        100,
+                                        19.5
+                                    ],
+                                    "fontsize": 12.0,
+                                    "fontname": "Arial"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "c-dac",
+                                    "maxclass": "newobj",
+                                    "text": "dac~ 1 2",
+                                    "numinlets": 2,
+                                    "numoutlets": 0,
+                                    "outlettype": [],
+                                    "patching_rect": [
+                                        460,
+                                        530,
+                                        72.0,
+                                        22.0
+                                    ],
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0
+                                }
+                            }
+                        ],
+                        "lines": [
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-core",
+                                        0
+                                    ],
+                                    "source": [
+                                        "obj-source",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-core",
+                                        2
+                                    ],
+                                    "source": [
+                                        "obj-source",
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-core",
+                                        1
+                                    ],
+                                    "source": [
+                                        "obj-source",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-core",
+                                        3
+                                    ],
+                                    "source": [
+                                        "obj-source",
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-rate",
+                                        0
+                                    ],
+                                    "source": [
+                                        "c-rlm",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-osc",
+                                        0
+                                    ],
+                                    "source": [
+                                        "c-rate",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-dep",
+                                        0
+                                    ],
+                                    "source": [
+                                        "c-osc",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-cen",
+                                        0
+                                    ],
+                                    "source": [
+                                        "c-dep",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-core",
+                                        4
+                                    ],
+                                    "source": [
+                                        "c-cen",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-core",
+                                        6
+                                    ],
+                                    "source": [
+                                        "c-law0",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-core",
+                                        6
+                                    ],
+                                    "source": [
+                                        "c-law1",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-dac",
+                                        0
+                                    ],
+                                    "source": [
+                                        "c-gain",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-dac",
+                                        1
+                                    ],
+                                    "source": [
+                                        "c-gain",
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-dac",
+                                        0
+                                    ],
+                                    "source": [
+                                        "c-dactog",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-gain",
+                                        0
+                                    ],
+                                    "source": [
+                                        "c-core",
+                                        0
+                                    ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [
+                                        "c-gain",
+                                        1
+                                    ],
+                                    "source": [
+                                        "c-core",
+                                        1
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
             }
         ],
         "lines": [
@@ -1418,7 +2348,12 @@
                     ]
                 }
             },
-            "inherited_shortname": 1
+            "inherited_shortname": 1,
+            "obj-coretab::c-gain": [
+                "Out core",
+                "Out",
+                0
+            ]
         },
         "autosave": 0
     }

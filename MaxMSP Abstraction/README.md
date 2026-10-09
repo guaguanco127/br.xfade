@@ -43,7 +43,7 @@ A click-free A/B crossfader. One Position control does two jobs: turn it for a d
 | br.xfade.ui.1.2 | Stereo, with a Law menu and Position and Fade dials, ready for a [bpatcher] |
 | br.xfade.mono.1.2 | Mono, no UI |
 | br.xfade.mono.ui.1.2 | Mono, with the same controls, ready for a [bpatcher] |
-| _br.xfade.example.1.2 | Example patch: open this first |
+| _br.xfade.example.1.2 | Example patch: open this first (its stereo core tab shows br.xfade.1.2, the plain stereo version) |
 
 Each UI version contains its plain version and has the same inlets and audio outlets (plus State last), so either swaps in without rewiring. Open a UI version in patching mode for comments on how it is built.
 

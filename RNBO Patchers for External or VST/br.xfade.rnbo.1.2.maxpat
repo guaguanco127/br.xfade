@@ -2279,21 +2279,20 @@
                                             },
                                             "classnamespace": "dsp.gen",
                                             "rect": [
-                                                -387.0,
-                                                -966.0,
-                                                1492.0,
-                                                725.0
+                                                100.0,
+                                                100.0,
+                                                1146.0,
+                                                900.0
                                             ],
                                             "boxes": [
                                                 {
                                                     "box": {
                                                         "maxclass": "newobj",
                                                         "text": "in 1 @comment \"A Left In (Signal)\"",
-                                                        "linecount": 2,
                                                         "patching_rect": [
                                                             20.0,
                                                             20.0,
-                                                            140.0,
+                                                            200.0,
                                                             22.0
                                                         ],
                                                         "numinlets": 0,
@@ -2310,11 +2309,10 @@
                                                     "box": {
                                                         "maxclass": "newobj",
                                                         "text": "in 2 @comment \"A Right In (Signal)\"",
-                                                        "linecount": 2,
                                                         "patching_rect": [
-                                                            170.0,
+                                                            235.0,
                                                             20.0,
-                                                            140.0,
+                                                            208.0,
                                                             22.0
                                                         ],
                                                         "numinlets": 0,
@@ -2331,11 +2329,10 @@
                                                     "box": {
                                                         "maxclass": "newobj",
                                                         "text": "in 3 @comment \"B Left In (Signal)\"",
-                                                        "linecount": 2,
                                                         "patching_rect": [
-                                                            320.0,
+                                                            458.0,
                                                             20.0,
-                                                            140.0,
+                                                            200.0,
                                                             22.0
                                                         ],
                                                         "numinlets": 0,
@@ -2352,11 +2349,10 @@
                                                     "box": {
                                                         "maxclass": "newobj",
                                                         "text": "in 4 @comment \"B Right In (Signal)\"",
-                                                        "linecount": 2,
                                                         "patching_rect": [
-                                                            470.0,
+                                                            673.0,
                                                             20.0,
-                                                            140.0,
+                                                            208.0,
                                                             22.0
                                                         ],
                                                         "numinlets": 0,
@@ -2373,12 +2369,12 @@
                                                     "box": {
                                                         "maxclass": "newobj",
                                                         "text": "in 5 @comment \"Position (Signal/Float) 0. to 100. 0 = all A, 100 = all B. Default 0\"",
-                                                        "linecount": 4,
+                                                        "linecount": 3,
                                                         "patching_rect": [
-                                                            620.0,
+                                                            896.0,
                                                             20.0,
-                                                            140.0,
-                                                            22.0
+                                                            200.0,
+                                                            49.0
                                                         ],
                                                         "numinlets": 0,
                                                         "fontname": "Arial",
@@ -2394,12 +2390,12 @@
                                                     "box": {
                                                         "maxclass": "newobj",
                                                         "text": "in 6 @comment \"Fade (Signal/Float) ms 1. to 30000. Time for a full A-to-B move; every change glides at that speed. Default 20\" @default 20",
-                                                        "linecount": 7,
+                                                        "linecount": 5,
                                                         "patching_rect": [
-                                                            770.0,
-                                                            20.0,
-                                                            140.0,
-                                                            22.0
+                                                            508.5,
+                                                            145.0,
+                                                            200.0,
+                                                            76.0
                                                         ],
                                                         "numinlets": 0,
                                                         "fontname": "Arial",
@@ -2415,12 +2411,12 @@
                                                     "box": {
                                                         "maxclass": "newobj",
                                                         "text": "in 7 @comment \"Law (Signal/Int) 0 Equal Power, 1 Linear. Equal Power for different sources, Linear when A and B are nearly the same signal. Default 0\"",
-                                                        "linecount": 7,
+                                                        "linecount": 5,
                                                         "patching_rect": [
-                                                            920.0,
-                                                            20.0,
-                                                            140.0,
-                                                            22.0
+                                                            723.5,
+                                                            145.0,
+                                                            200.0,
+                                                            76.0
                                                         ],
                                                         "numinlets": 0,
                                                         "fontname": "Arial",
@@ -2437,7 +2433,7 @@
                                                         "maxclass": "codebox",
                                                         "patching_rect": [
                                                             20.0,
-                                                            70.0,
+                                                            273.0,
                                                             700.0,
                                                             900.0
                                                         ],
@@ -2458,11 +2454,10 @@
                                                     "box": {
                                                         "maxclass": "newobj",
                                                         "text": "out 1 @comment \"Left Out (Signal)\"",
-                                                        "linecount": 2,
                                                         "patching_rect": [
                                                             20.0,
-                                                            990.0,
-                                                            140.0,
+                                                            1203.0,
+                                                            205.0,
                                                             22.0
                                                         ],
                                                         "numinlets": 1,
@@ -2476,11 +2471,10 @@
                                                     "box": {
                                                         "maxclass": "newobj",
                                                         "text": "out 2 @comment \"Right Out (Signal)\"",
-                                                        "linecount": 2,
                                                         "patching_rect": [
-                                                            170.0,
-                                                            990.0,
-                                                            140.0,
+                                                            701.0,
+                                                            1203.0,
+                                                            213.0,
                                                             22.0
                                                         ],
                                                         "numinlets": 1,
@@ -2513,6 +2507,12 @@
                                                         "destination": [
                                                             "obj-code",
                                                             1
+                                                        ],
+                                                        "midpoints": [
+                                                            244.5,
+                                                            84.0,
+                                                            143.0,
+                                                            84.0
                                                         ]
                                                     }
                                                 },
@@ -2525,6 +2525,12 @@
                                                         "destination": [
                                                             "obj-code",
                                                             2
+                                                        ],
+                                                        "midpoints": [
+                                                            467.5,
+                                                            96.0,
+                                                            256.5,
+                                                            96.0
                                                         ]
                                                     }
                                                 },
@@ -2537,6 +2543,12 @@
                                                         "destination": [
                                                             "obj-code",
                                                             3
+                                                        ],
+                                                        "midpoints": [
+                                                            682.5,
+                                                            108.0,
+                                                            370.0,
+                                                            108.0
                                                         ]
                                                     }
                                                 },
@@ -2549,6 +2561,12 @@
                                                         "destination": [
                                                             "obj-code",
                                                             4
+                                                        ],
+                                                        "midpoints": [
+                                                            905.5,
+                                                            120.0,
+                                                            483.5,
+                                                            120.0
                                                         ]
                                                     }
                                                 },
@@ -2561,6 +2579,12 @@
                                                         "destination": [
                                                             "obj-code",
                                                             5
+                                                        ],
+                                                        "midpoints": [
+                                                            518.0,
+                                                            248.0,
+                                                            597.0,
+                                                            248.0
                                                         ]
                                                     }
                                                 },
@@ -2573,6 +2597,12 @@
                                                         "destination": [
                                                             "obj-code",
                                                             6
+                                                        ],
+                                                        "midpoints": [
+                                                            733.0,
+                                                            236.0,
+                                                            710.5,
+                                                            236.0
                                                         ]
                                                     }
                                                 },

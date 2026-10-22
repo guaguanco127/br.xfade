@@ -220,7 +220,7 @@
                             100.0,
                             100.0,
                             1100.0,
-                            760.0
+                            900.0
                         ],
                         "bglocked": 0,
                         "openinpresentation": 0,
@@ -267,7 +267,7 @@
                                     "patching_rect": [
                                         20.0,
                                         20.0,
-                                        140.0,
+                                        177.0,
                                         22.0
                                     ],
                                     "text": "in 1 @comment \"A In (Signal)\"",
@@ -285,9 +285,9 @@
                                         ""
                                     ],
                                     "patching_rect": [
-                                        170.0,
+                                        212.0,
                                         20.0,
-                                        140.0,
+                                        177.0,
                                         22.0
                                     ],
                                     "text": "in 2 @comment \"B In (Signal)\"",
@@ -305,14 +305,15 @@
                                         ""
                                     ],
                                     "patching_rect": [
-                                        320.0,
+                                        404.0,
                                         20.0,
-                                        140.0,
-                                        22.0
+                                        200.0,
+                                        49.0
                                     ],
                                     "text": "in 3 @comment \"Position (Signal/Float) 0. to 100. 0 = all A, 100 = all B. Default 0\"",
                                     "fontsize": 12.0,
-                                    "fontname": "Arial"
+                                    "fontname": "Arial",
+                                    "linecount": 3
                                 }
                             },
                             {
@@ -325,14 +326,15 @@
                                         ""
                                     ],
                                     "patching_rect": [
-                                        470.0,
+                                        619.0,
                                         20.0,
-                                        140.0,
-                                        22.0
+                                        200.0,
+                                        76.0
                                     ],
                                     "text": "in 4 @comment \"Fade (Signal/Float) ms 1. to 30000. Time for a full A-to-B move; every change glides at that speed. Default 20\" @default 20",
                                     "fontsize": 12.0,
-                                    "fontname": "Arial"
+                                    "fontname": "Arial",
+                                    "linecount": 5
                                 }
                             },
                             {
@@ -345,14 +347,15 @@
                                         ""
                                     ],
                                     "patching_rect": [
-                                        620.0,
+                                        834.0,
                                         20.0,
-                                        140.0,
-                                        22.0
+                                        200.0,
+                                        76.0
                                     ],
                                     "text": "in 5 @comment \"Law (Signal/Int) 0 Equal Power, 1 Linear. Equal Power for different sources, Linear when A and B are nearly the same signal. Default 0\"",
                                     "fontsize": 12.0,
-                                    "fontname": "Arial"
+                                    "fontname": "Arial",
+                                    "linecount": 5
                                 }
                             },
                             {
@@ -366,7 +369,7 @@
                                     ],
                                     "patching_rect": [
                                         20.0,
-                                        70.0,
+                                        172.0,
                                         700.0,
                                         900.0
                                     ],
@@ -385,8 +388,8 @@
                                     "outlettype": [],
                                     "patching_rect": [
                                         20.0,
-                                        990.0,
-                                        140.0,
+                                        1102.0,
+                                        182.0,
                                         22.0
                                     ],
                                     "text": "out 1 @comment \"Out (Signal)\"",
@@ -417,6 +420,12 @@
                                     "destination": [
                                         "obj-code",
                                         1
+                                    ],
+                                    "midpoints": [
+                                        221.5,
+                                        111.0,
+                                        199.75,
+                                        111.0
                                     ]
                                 }
                             },
@@ -429,6 +438,12 @@
                                     "destination": [
                                         "obj-code",
                                         2
+                                    ],
+                                    "midpoints": [
+                                        413.5,
+                                        123.0,
+                                        370.0,
+                                        123.0
                                     ]
                                 }
                             },
@@ -441,6 +456,12 @@
                                     "destination": [
                                         "obj-code",
                                         3
+                                    ],
+                                    "midpoints": [
+                                        628.5,
+                                        135.0,
+                                        540.25,
+                                        135.0
                                     ]
                                 }
                             },
@@ -453,6 +474,12 @@
                                     "destination": [
                                         "obj-code",
                                         4
+                                    ],
+                                    "midpoints": [
+                                        843.5,
+                                        147.0,
+                                        710.5,
+                                        147.0
                                     ]
                                 }
                             },
